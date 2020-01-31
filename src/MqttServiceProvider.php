@@ -14,14 +14,6 @@ use Salman\Mqtt\MqttClass\Mqtt;
 class MqttServiceProvider extends ServiceProvider
 {
 
-    public function boot()
-    {
-        $this->mergeConfigFrom(__DIR__.'/config/mqtt.php','mqtt');
-        $this->publishes([
-            __DIR__.'/config/mqtt.php' => config_path('mqtt.php'),
-        ]);
-    }
-
     public function register()
     {
         $this->app->singleton('Mqtt',function (){
